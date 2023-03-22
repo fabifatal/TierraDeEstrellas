@@ -25,5 +25,4 @@ public class Challenge {
     private String objetoCeleste;
     private String coordenadasCorrectas;
     private String coordenadasUsuario;
-    
 }

@@ -21,6 +21,7 @@ public class InfoInitial {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer infoInicialId;
     private String noticias;
     private String mision;
     private String vision;
