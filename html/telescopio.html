@@ -1,16 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tierra De Estrellas</title>
     <link rel="stylesheet" type="text/css" href="../CSS/telescopio.css" />
-</head>
+  </head>
 
-<body class="background">
+  <body style="background-color: black">
+    <script>
+      function startTimer(duration, display) {
+        var timer = duration,
+          minutes,
+          seconds;
+        var op = 0;
+        setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
 
-</body>
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
 
+          display.textContent = minutes + ":" + seconds;
+
+          if (--timer < 0) {
+            timer = duration;
+          }else if (++op > 0){
+        document.getElementById("cont").style.opacity = op+"%";
+          }
+        }, 1000);
+      }
+      window.onload = function () {
+        var fiveMinutes = 60 * 0.5,
+          display = document.querySelector("#time");
+        startTimer(fiveMinutes, display);
+      };
+    </script>
+    <!-- <script>
+      function startTimer(duration, display) {
+        var timer = duration,
+          minutes,
+          seconds;
+        setInterval(function () {
+          minutes = parseInt(timer / 60, 10);
+          seconds = parseInt(timer % 60, 10);
+
+          minutes = minutes < 10 ? "0" + minutes : minutes;
+          seconds = seconds < 10 ? "0" + seconds : seconds;
+
+          display.textContent = minutes + ":" + seconds;
+
+          if (--timer < 0) {
+            timer = duration;
+          }
+        }, 1000);
+      }
+
+      window.onload = function () {
+        var fiveMinutes = 60 * 1,
+          display = document.querySelector("#time");
+        startTimer(fiveMinutes, display);
+      };
+    </script> -->
+    <div class="juego">
+      <div class="timer">
+        Registration closes in <span id="time"></span> minutes!
+      </div>
+      <div class="contaminacion" id="cont">HOLA</div>
+      <img
+        src="../Imagenes/Imagenes_telescopio/Imagen_1.png"
+        class="imgfondo"
+      />
+      <img
+        src="../Imagenes/Imagenes_telescopio/barra inferior.png"
+        class="barrainferior"
+      />
+      <p id="timer"></p>
+      <div class="contenedorinferior">
+        <div class="boxobjetivo">
+          <p>Objeto a Encontrar</p>
+          <img
+            src="../Imagenes/Imagenes_telescopio/objetivo 1.png"
+            class="boximg"
+          />
+        </div>
+        <div class="boxcoordenadas">
+          <p class="telescopio">Very Large Telescope</p>
+          <p class="observatorio">La Silla</p>
+          <p>Coordenadas</p>
+          <form class="formcoordenadas">
+            <label for="x">X</label>
+            <input id="x" name="x" class="inputbox" />
+            <label for="" y>Y</label>
+            <input id="y" name="y" class="inputbox" />
+          </form>
+        </div>
+        <div class="boxdialogo">
+          <p class="dialogo">
+            Hace años que sabemos de la existencia teórica de exoplanetas
+            (aquellos fuera de nuestro sistema solar), pero ¿serás capáz de
+            capturar la imágen de uno?
+          </p>
+        </div>
+        <div class="npc">
+          <img src="../Imagenes/Imagenes_telescopio/NPC.png" />
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
