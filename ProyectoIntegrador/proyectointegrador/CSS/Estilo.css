@@ -1,0 +1,346 @@
+/* importo desde google fonts la familia del tipo de letra que quiero y ademas le indico que 
+esta letra estara en tooodo el body */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,500&display=swap');
+
+/*creamos variable para poder acceder a las customproperties de cualquier elemento*/
+/* con esto tendra un padin de 100 px vertical y cero para los lados*/
+:root {
+    --padding-container: 100px 0;
+    --color-title: #001A49;
+}
+
+/*aqui le indico que estara en todo el body */
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+}
+
+/* modificamos al container que es el contenedor de la pagina */
+
+.container{
+    /* para que no ocupe el 100% de la pagina*/
+    width: 90%;
+    /*ancho maximo de */
+    max-width: 1200px;
+    /*que el width se centre verticalmente*/
+    margin: 0 auto;
+    /*todo lo que se salga de eso se esconda*/
+    overflow: hidden;
+    /*le pondremos un color por mientras para poder verlo*/
+    /*background-color: black;*/
+    padding: var(--padding-container);
+}
+
+.encabezado{
+    width: 100%;
+    /* una altura del 100 de alto de pantalla*/
+    height: 100vh;
+    /* pero con un alto minimo de */
+    min-height: 600px;
+    /*y un maximo de */
+    max-height: 800px;
+    /* el position relative es para que el elemnto se posicione bien en este contenedor*/
+    position: relative;
+    /* esto para crear filas una de 100 y la otra que tome el contenido sobrante despues de los 100px*/
+    display: grid; 
+    grid-template-rows: 100px 1fr;
+    color: rgb(255, 240, 250);
+}
+
+/* creamos este seudo contenido para que el recorte que le estoy haciendo a la imagen
+nome afecte en el resto del proyectosqui y no me cree conflicto con el path */
+
+.encabezado::before{
+    content: "";
+    position: absolute; /*para que sea como su "padre" hero*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*con esto le estamos poniendo una capa de transparencia a la imagen*/
+    background-image: linear-gradient(180deg, #00000020 0%, #00000017 100%), url("../imagenes/cieloyhombre.jpg");
+    /*ahora para que se adapte a la pagina*/
+    background-size: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 80%);
+    /*parapoder arreglar el tema de las letras por detras de la imagen*/
+    z-index: -1;
+}
+
+/*---------------Comenzamos con el "menu de navegacion"----------------------------------*/
+
+
+.nav {
+    /* No quiero que la seccion de navegacion tenga el padding de 100px */
+    --padding-container: 0;
+    height: 100%;
+    display: flex;
+     /* con esto le digo que quiero que los elementos esten uno alado de otro y no para abajo*/
+    align-items: center;
+}
+
+.nav_title {
+    /*asi el tipo de letre es mas delgado*/
+    font-weight: 300;
+}
+
+.nav_link {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav_items {
+    /*para que le quite el estilo de lista */
+    list-style: none;
+}
+
+.nav_links {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* pero ojo este navegacion de menu y el navegacion close es netamente para cuando se ve desde dispositivos
+moviles O_O*/
+.nav_menu{
+    margin-left: auto;
+    /*para que cada vez que pase el cursor se active la barrita*/
+    cursor: pointer;
+    display: none;
+}
+
+.nav_img {
+    display: block;
+    width: 30px;
+}
+
+
+.nav_close {
+    display: var(--show, none);
+}
+
+/*---------------------------metemos mano al texto de enmedio del encabezado-------*/
+
+.encabezado_container{
+    max-width: 800px;
+    display:grid;
+    --padding-container:0;
+    /*para que no ocupen mas de lo debido*/
+    grid-auto-rows: max-content;
+    /*para que el contenido se alinea verticalmente*/
+    align-content: center;
+    /*pero que tenga un espaciado de*/
+    gap: 1em;
+    /*y un padding para que el boton no este tan pegado*/
+    padding-bottom: 100px;
+    /*que todo el texto se centre*/
+    text-align: center;
+}
+
+.encabezado_title{
+    font-size: 3rem;
+}
+
+.encabezado_paragraph{
+    margin-bottom: 20px;
+}
+
+.botonajuego{
+    display: inline-block;
+    background-color: #e60ea562;
+    justify-self: center;
+    color: #fff;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 32px;
+}
+
+/* -------comenzamos con lo que esta bajo el contenedor encabezado */
+/* POR DESARROLLAR = en esta parte tenemos que ir jugando para poder agrandar las imagenes y que
+queden mas lindas esteticamente y cambiar las imagenes <3 */
+
+.bajoEncabezado{
+    text-align: center;
+}
+
+.subtitle{
+    color: var(--color-title); /* llamamos a root*/
+    font-size: 2rem;
+    margin-bottom: 25px;
+}
+
+.bajoEncabezado_paragraph{
+    line-height: 2;
+}
+
+.divconYsin {
+    padding-top: 40px;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 1em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+
+.imgContaminacion {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+   /* overflow: hidden;*/ /*este es para ocultarme lo que se exceda pero me esta dando jugo*/
+    margin: 0 auto;
+}
+
+.imgBajoEncabezado {
+    width: 280px;
+}
+
+/* ahora la parte de los astronomos, con slide pero me falta JS*/
+
+/*copie esta parte del magic pattern*/
+.astronomos{
+    background-color: #e5e5f7;
+    /*opacity: 0.8;*/
+    background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0,10px 10px;
+}
+
+.fondoAstronomos_container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    align-items: center;
+}
+
+/*dandole forma a lo que puse dentro del contenedor de astronomos*/
+
+.astronomos{
+    background-color: #e5e5f7;
+}
+
+.fondoAstronomos_container{
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    gap: 1em;
+    align-items: center;
+}
+
+.descripcion_body{
+    display: grid;
+    /* que tenga dos columnas textos e imagen*/
+    grid-template-columns: 1fr max-content;
+    /* para que se vaya a las esquinas y se centre*/
+    justify-content: space-between;
+    align-items: center;
+    gap: 2em;
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.descripcion_body--show{
+    /* este va a la propiedad original*/
+    pointer-events: unset;
+    opacity: 1;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.astronomo_img{
+    width: 250px;
+    height: 250px;
+    /*redondeamos la imagen*/
+    border-radius: 50%;
+    object-fit: cover;
+    /* para que se ajuste la imagen horizontalmente centrada pero un 30% en y*/
+    object-position: 50% 30%;
+}
+
+.descripcion_text{
+    max-width: 700px;
+}
+
+.testimony__course{
+    background-color: royalblue;
+    color: #fff;
+    display: inline-block;
+    padding: 5px;
+}
+
+.astronomos_arrow{
+    width: 90%;
+    /* para que se vea el cursor cada vez que me paro en las flechas*/
+    cursor: pointer;
+}
+
+/* ahora modificaremos la parte del final de la pagina */
+
+.piefinal{
+    background-color: #1D293F;
+}
+
+.piefinal_container{
+    --padding-container: 30px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.piefinal_copyright{
+    font-weight: 300;
+}
+
+.piefinal_icons{
+    margin-bottom: 10px;
+}
+
+.piefinal_img{
+    width: 30px;
+}
+
+/*-------------------------------Fin incio--------------------------------*/
+
+/* ---------------Comienzo Nosotros--------------------------------------*/
+
+.encabezado_nosotros{
+    width: 100%;
+    /* una altura del 100 de alto de pantalla*/
+    height: 100vh;
+    /* pero con un alto minimo de */
+    min-height: 600px;
+    /*y un maximo de */
+    max-height: 800px;
+    /* el position relative es para que el elemnto se posicione bien en este contenedor*/
+    position: relative;
+    /* esto para crear filas una de 100 y la otra que tome el contenido sobrante despues de los 100px*/
+    display: grid; 
+    grid-template-rows: 100px 1fr;
+    color: rgb(255, 240, 250);
+}
+
+/* creamos este seudo contenido para que el recorte que le estoy haciendo a la imagen
+nome afecte en el resto del proyectosqui y no me cree conflicto con el path */
+
+.encabezado_nosotros::before{
+    content: "";
+    position: absolute; /*para que sea como su "padre" hero*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*con esto le estamos poniendo una capa de transparencia a la imagen*/
+    background-image: linear-gradient(180deg, #00000020 0%, #00000017 100%), url("../imagenes/nosotros.jpg");
+    /*ahora para que se adapte a la pagina*/
+    background-size: cover;
+    clip-path: polygon(100% 0, 100% 70%, 50% 50%, 0 70%, 0 0);
+    /*parapoder arreglar el tema de las letras por detras de la imagen*/
+    z-index: -1;
+}
+

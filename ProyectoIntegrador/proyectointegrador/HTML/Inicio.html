@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tierra De Estrellas</title>
+
+    <!--Le indicamos el logo que le vamos a poner-->
+    <!-- <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">-->
+
+    <!--enlazamos al normalice y al estilo de la letra que escojimos-->
+    <link rel="stylesheet" href="../CSS/normalize.css ">
+    <link rel="stylesheet" href="../CSS/Estilo.css">
+    
+</head>
+
+<body>
+    
+    <!--creamos un header = encabezado-->
+    <!--ademas le decimos que hay un menuc on nav-->
+    <!--Toda la pagina la dejamos contenida a un contenedor para que no se rocen los bordes-->
+
+
+    <!-- en header dejamos todo lo que tendra el que yo conozco por banner-->
+    <header class = "encabezado">
+        <nav class = "nav container">
+            <div class ="nav_logo">
+
+                <h2 class = "nav_title">Tierra De Estrellas</h2>
+                <br>
+            </div>
+
+            <ul class = "nav_link">
+
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Inicio</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Nosotros</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Astronomia</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Noticias</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">JUGAR</a>
+                </li>
+                <li class="nav_items">
+                    <a href="#" class="nav_links">Inicio Sesion </a>
+                </li>
+
+                <img src = "../imagenes/close.svg" class = "nav_close">
+
+            </ul>
+
+            <div class = "nav_menu">
+
+                <img src = "../imagenes/menu.svg" class = "nav_img">
+
+            </div>
+            
+        </nav>
+
+        <!--ahora en la section vamos a poner lo que quiero en el comienzo del inicio-->
+
+        <section class = "encabezado_container container">
+            <h1 class = "encabezado_title">Aprende jugando</h1>
+            <p class = "encabezado_paragraph">¿Quieres saber cuanto afecta la Contaminacion Luminica a la astronomia en Chile?</p>
+            <a href = "#" class = "botonajuego">Juega y Aprende</a>
+        </section>
+    </header>
+
+    <!--ahora haremos lo que viene debajito del "banner"-->
+    <!--no entiendo muy bien que hace el main pero dentro va todo lo que quiero tener bajo el encabezado-->
+
+    <main>
+        <section class = "container bajoEncabezado">
+            <h2 class = "subtitle ">La Contaminacion Luminica, el enemigo de los cielos de Chile</h2>
+            <p class = "bajoEncabezado_paragraph"> Este enemigo silencioso aumenta cada año un 2%, el cual va afectando la visibilidad de los cielos <br> A la larga si seguimos igual perderemos toda vision hacia el exterior</p>
+        
+
+         <!--imagenes donde podamos ver la diverencia con y sin contaminacion -->
+
+            <div class = "divconYsin">
+                 <article class = "imgContaminacion">
+                         <img src = "../imagenes/buenos aires sin conta.JPG" class = "imgBajoEncabezado">
+                         <h3 class="about__title">Sin Contaminacion Luminica</h3>
+                         <p class="about__paragrah">Este es el cielo de buenos aires sin contaminacion luminica <br> Es precioso ¿no?</p>
+                 </article>
+
+                 <article class = "imgContaminacion">
+                         <img src = "../imagenes/buenos aires con conta.JPG" class = "imgBajoEncabezado">
+                         <h3 class="about__title">Con Contaminacion Luminica</h3>
+                         <p class="about__paragrah">El mismo cielo pero ahora afectado por la contaminacion <br> ¿Ves la diferencia?</p>
+                 </article>
+            </div>
+        </section>
+
+        <!--En esta parte seria genial poner con slide imagenes de algunos astronomos chilenos con su breve descripcion, pero al parecer esta parte se hace con JS,lo veremos mas adelante :D-->
+
+        <!--pero dejare avanzado un tanto el boceto-->
+
+        <section class= "astronomos">
+            <div class = "fondoAstronomos_container container">
+                <h2 class="subtitle">Astronomos reconocidos</h2>
+            </div>
+
+            <div class="descripcionAstronomos_container container">
+                <img src = "../imagenes/leftArrow.svg" class = "astronomos_arrow" id="before">
+
+                <section class = "descripcion_body descripcion_body--show " data-id = "1">
+                    <div class = "descripcion_text">
+                        <h2 class="subtitle">José Maza Sancho <span class="testimony__course">Astrónomo Chileno</span></h2>
+                        <p class = "descripcion_review">Doctor en Astronomía, con mención en astrofísica. Sus estudios se centraron en el estudio de las supernovas, la ejecución de una búsqueda con prisma objetivo de objetos con líneas de emisión, energía oscura y cuásares, los cuales le llevaron a ser galardonado con el Premio Nacional de Ciencias Exactas en 1999. A partir 2017 adquirió fama con sus libros de divulgación científica y pódcast.</p>
+                    </div>
+
+                    <figure class = "astronomo_picture">
+                        <img src = "../imagenes/Josemaza.jpg" class = "astronomo_img">
+                    </figure>
+                 </section>
+
+                 <section class = "descripcion_body descripcion_body--show " data-id = "2">
+                    <div class = "descripcion_text">
+                        <h2 class="subtitle">Teresa Paneque Carreño <span class="testimony__course">Astrónoma Chilena/Española</span></h2>
+                        <p class = "descripcion_review">Su área de especialización es la formación de planetas, específicamente el estudio de las condiciones químicas en los entornos de formación planetaria. En 2021 es coautora de una publicación científica que describe inestabilidades gravitacionales de la estrella Elias 2-27, entregando evidencia a la hipótesis de inestabilidad gravitacional en discos protoplanetarios.</p>
+                    </div>
+
+                    <figure class = "astronomo_picture">
+                        <img src = "../imagenes/terepaneque.jpg" class = "astronomo_img">
+                    </figure>
+                 </section>
+
+                 <section class = "descripcion_body descripcion_body--show " data-id = "3">
+                    <div class = "descripcion_text">
+                        <h2 class="subtitle">María Teresa Ruiz <span class="testimony__course">Astrónoma Chilena</span></h2>
+                        <p class = "descripcion_review">Fue ganadora con el Premio Nacional de Ciencias Exactas en 1997. Especializada en el estudio de las estrellas enanas de baja masa, ha descubierto una supernova en el momento de explotar, dos nebulosas planetarias en el halo de nuestra galaxia y la enana «café» en las proximidades del sistema solar llamada Kelu (de kelü, «rojo» en mapudungún), en la Constelación de Hidra.</p>
+                    </div>
+
+                    <figure class = "astronomo_picture">
+                        <img src = "../imagenes/mariateresaruiz.jpg" class = "astronomo_img">
+                    </figure>
+                 </section>
+
+                 <section class = "descripcion_body descripcion_body--show " data-id = "4">
+                    <div class = "descripcion_text">
+                        <h2 class="subtitle">Mónica Rubio López <span class="testimony__course">Astrónoma Chilena</span></h2>
+                        <p class = "descripcion_review">directora de la Sociedad Chilena de Astronomía (SOCHIAS) entre 2019 y 2021. Por sus importantes contribuciones a la astronomía obtuvo el Premio Nacional de Ciencias Exactas del año 2021. En 2015 encabezó un estudio que fue publicado en la Revista Nature, sobre una nueva forma de maternidad estelar, descubierta tras el hallazgo de una "incubadora" de estrellas al alero de Wolf-Lundmark-Melotte (WLM), que se encuentra a tres millones de años luz del planeta Tierra</p>
+                    </div>
+
+                    <figure class = "astronomo_picture">
+                        <img src = "..//imagenes/monicarubio.jpg" class = "astronomo_img">
+                    </figure>
+                 </section>
+
+                 <img src="../imagenes/rightArrow.svg" class = "astronomos_arrow" id="next">
+            </div>
+        </section>
+    </main>
+
+ <!--Ahora haremos la parte final de la pagina web esta parte solo quiero que aparezca en el inicio-->
+
+    <footer class="piefinal">
+        <section class = "piefinal_container container">
+            <div clas ="piefinal_social">
+                <a href="#" class="piefinal_icons"><img src="../imagenes/facebook.svg" class="piefinal_img"></a>
+                <a href="#" class="piefinal_icons"><img src="../imagenes/instagrma.svg" class="piefinal_img"></a>
+                <a href="#" class="piefinal_icons"><img src="../imagenes/whatsapp.svg" class="piefinal_img"></a>
+                <a href="#" class="piefinal_icons"><img src="../imagenes/email.svg" class="piefinal_img"></a>
+            </div>
+
+            <h3 class="piefinal_copyright">Derechos reservados &copy; Tierra De Estrellas</h3>
+        </section>
+    </footer>
+
+
+
+
+
+
+
+</body>
+</html>
