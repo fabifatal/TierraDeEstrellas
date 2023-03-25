@@ -309,38 +309,141 @@ queden mas lindas esteticamente y cambiar las imagenes <3 */
 
 /* ---------------Comienzo Nosotros--------------------------------------*/
 
+/* 1- Encabezado*/
+
+.body_nosotros{
+    background-color: #fff;
+}
 .encabezado_nosotros{
     width: 100%;
-    /* una altura del 100 de alto de pantalla*/
-    height: 100vh;
-    /* pero con un alto minimo de */
-    min-height: 600px;
-    /*y un maximo de */
+    height: 1000vh;
+    min-height: 900px;
     max-height: 800px;
-    /* el position relative es para que el elemnto se posicione bien en este contenedor*/
     position: relative;
-    /* esto para crear filas una de 100 y la otra que tome el contenido sobrante despues de los 100px*/
     display: grid; 
     grid-template-rows: 100px 1fr;
     color: rgb(255, 240, 250);
+    
 }
-
-/* creamos este seudo contenido para que el recorte que le estoy haciendo a la imagen
-nome afecte en el resto del proyectosqui y no me cree conflicto con el path */
 
 .encabezado_nosotros::before{
     content: "";
-    position: absolute; /*para que sea como su "padre" hero*/
-    top: 0;
+    position: absolute; 
     left: 0;
     width: 100%;
     height: 100%;
-    /*con esto le estamos poniendo una capa de transparencia a la imagen*/
     background-image: linear-gradient(180deg, #00000020 0%, #00000017 100%), url("../imagenes/nosotros.jpg");
-    /*ahora para que se adapte a la pagina*/
     background-size: cover;
-    clip-path: polygon(100% 0, 100% 70%, 50% 50%, 0 70%, 0 0);
-    /*parapoder arreglar el tema de las letras por detras de la imagen*/
+    clip-path: polygon(100% 0, 100% 100%, 50% 62%, 0 100%, 0 0);
     z-index: -1;
+    
+}
+
+
+
+/*esto es parte del "menu"*/
+
+.nav_nosotros{
+    
+    background-color: #f5e8f44b;
+    --padding-container: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* con esto se supone que le digo que se quede fijo arriba */
+    position: sticky;
+    top: 0;
+    
+   
+}
+
+.nav_titlenosotros {
+    /*asi el tipo de letre es mas delgado*/
+    font-weight: 300;
+    color: #050505;
+}
+
+.nav_linknosotros {
+    margin-left: auto;
+    padding: 0;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    gap: 2em;
+}
+
+.nav_itemsnosotros {
+    /*para que le quite el estilo de lista */
+    list-style: none;
+}
+
+.nav_linksnosotros {
+    color: #050505;
+    text-decoration: none;
+}
+
+
+
+/* bajo encabezado*/
+
+.misionVision {
+    padding-top: 0;
+    display: grid;
+    width: 90%;
+    margin: 0 auto;
+    gap: 5em;
+    overflow: hidden;
+    grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+.imgvisionmision {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+    width: 260px;
+   /* overflow: hidden;*/  
+    margin: 0 auto;
+}
+
+.imgBajoEncabezadonosotros {
+    width: 150px;
+}
+
+.bajoencabezadonosotrosmisionVision{
+    text-align: center;
+    text-align: justify;
+}
+
+/*--------------------------fin nosotros-----------------------------*/
+
+/*--------------------------incio noticias--------------------------*/
+
+.encabezado_noticias{
+    width: 100%;
+    
+    min-height: 200px;
+    max-height: 0px;
+    position: relative;
+    display: grid; 
+    grid-template-rows: 100px 1fr;
+    color: rgb(255, 240, 250);
+    
+}
+
+.encabezado_noticias::before{
+    content: "";
+    position: absolute; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(500deg, #00000020 0%, #00000017 100%), url("../imagenes/noticias.jpg");
+    background-size: cover;
+    z-index: -1;
+    
 }
 
