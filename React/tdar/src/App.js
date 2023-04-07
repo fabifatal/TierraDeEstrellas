@@ -5,6 +5,7 @@ import InicioPages from './pages/InicioPages'
 import NosotrosPages from './pages/NosotrosPages';
 import NoticiasPages from './pages/NoticiasPages';
 import AstronomiaPages from './pages/AstronomiaPages';
+import HistoriaPages from './pages/HistoriaPages';
 
 
 
@@ -16,8 +17,9 @@ const App = () => {
         <Route path="/Nosotros" element={<NosotrosPages/>}></Route>
         <Route path="/Noticias" element={<NoticiasPages/>}></Route>
         <Route path="/Astronomia" element={<AstronomiaPages/>}></Route>
+        <Route path="/Historia" element={<HistoriaPages/>}></Route>
 
-      
+
         {/* <Route path="/juego" element={<JuegoPage/>}></Route> */}
       </Routes>
       </BrowserRouter>
